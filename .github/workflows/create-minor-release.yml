@@ -30,7 +30,8 @@ jobs:
           overrideConfig: |
             mode=ContinuousDeployment
             increment=Minor
-            is-mainline=true
+            useConfigFile=true
+            configFilePath=GitVersion.yml
 
       - name: Update version in readme
         run: |
