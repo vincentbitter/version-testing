@@ -39,5 +39,3 @@ jobs:
         run: |
           git tag -a "v$GITVERSION_SEMVER" -m "Release version $GITVERSION_SEMVER"
           git push --follow-tags origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
