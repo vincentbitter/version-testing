@@ -25,10 +25,8 @@ jobs:
           fetch-depth: 0
 
       - name: Determine next version
-        id: gitversion
         uses: gittools/actions/gitversion/execute@v3.2.1
         with:
-          useConfigFile: false
           overrideConfig: |
             mode: ContinuousDeployment
             increment: Minor
