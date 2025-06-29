@@ -28,9 +28,8 @@ jobs:
         uses: gittools/actions/gitversion/execute@v3.2.1
         with:
           overrideConfig: |
-            mode=ContinuousDeployment
+            mode=ManualDeployment
             increment=Minor
-            semver=Minor
 
       - name: Update version in readme
         run: |
