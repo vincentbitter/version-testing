@@ -35,7 +35,7 @@ jobs:
 
       - name: Update version in readme
         run: |
-          sed -i "s/Version: .*/Version: $GITVERSION_SEMVER/" README.md
+          sed -i "s/Version:.*/Version: $GITVERSION_SEMVER/" README.md
           git commit -am "Update version to $GITVERSION_SEMVER"
 
       - name: Create new tag
