@@ -10,9 +10,9 @@ jobs:
       contents: write
     steps:
       - name: Use GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9.7
+        uses: gittools/actions/gitversion/setup@v3.2.1
         with:
-          versionSpec: "5.x"
+          versionSpec: "6.3.x"
 
       - name: Configure Git client
         run: |
