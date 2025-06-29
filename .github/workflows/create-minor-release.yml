@@ -27,11 +27,11 @@ jobs:
       - name: Determine next version
         uses: gittools/actions/gitversion/execute@v3.2.1
         with:
+          useConfigFile: true
+          configFilePath: GitVersion.yml
           overrideConfig: |
             mode=ContinuousDeployment
             increment=Minor
-            useConfigFile=true
-            configFilePath=GitVersion.yml
 
       - name: Update version in readme
         run: |
