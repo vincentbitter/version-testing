@@ -26,9 +26,11 @@ jobs:
 
       - name: Determine next version
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.7
+        uses: gittools/actions/gitversion/execute@v3.2.1
         with:
           useConfigFile: false
+          overrideConfig: |
+            increment: Minor
 
       - name: Update version in readme
         run: |
