@@ -28,15 +28,15 @@ jobs:
         uses: gittools/actions/gitversion/execute@v3.2.1
         with:
           overrideConfig: |
-            mode=ManualDeployment
+            mode=Mainline
             increment=Minor
 
       - name: Update version in readme
         run: |
-          sed -i "s/Version:.*/Version: $GITVERSION_SEMVER/" README.md
-          git commit -am "Update version to $GITVERSION_SEMVER"
+          sed -i "s/Version:.*/Version: $GitVersion_FullSemVer/" README.md
+          git commit -am "Update version to $GitVersion_FullSemVer"
 
       - name: Create new tag
         run: |
-          git tag -a "v$GITVERSION_SEMVER" -m "Release version $GITVERSION_SEMVER"
+          git tag -a "v$GitVersion_FullSemVer" -m "Release version $GitVersion_FullSemVer"
           git push --follow-tags origin main
