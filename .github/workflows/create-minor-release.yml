@@ -30,6 +30,7 @@ jobs:
         with:
           useConfigFile: false
           overrideConfig: |
+            mode: ContinuousDeployment
             increment: Minor
 
       - name: Update version in readme
