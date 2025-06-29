@@ -30,6 +30,7 @@ jobs:
           overrideConfig: |
             mode=ContinuousDeployment
             increment=Minor
+            semver=Minor
 
       - name: Update version in readme
         run: |
