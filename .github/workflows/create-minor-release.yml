@@ -28,9 +28,12 @@ jobs:
 
       - name: Update version in readme
         run: |
-          sed -i "s/Version: .*/Version: ${{ steps.gitversion.outputs.fullSemVer }}/" README.md
+          sed -i "s/Version: .*/Version: $GITVERSION_SEMVER/" README.md
+          git commit -am "Update version to $GITVERSION_SEMVER"
 
       - name: Create new tag
         run: |
-          git tag -a "v${{ steps.gitversion.outputs.fullSemVer }}" -m "Release version ${{ steps.gitversion.outputs.fullSemVer }}"
+          git tag -a "v$GITVERSION_SEMVER" -m "Release version $GITVERSION_SEMVER"
           git push --follow-tags origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
