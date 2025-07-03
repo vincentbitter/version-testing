@@ -59,7 +59,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.GitVersion_FullSemVer }}
-          files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
+          files: ${{github.workspace}}/${{ github.event.repository.name }}-v${{ env.GitVersion_FullSemVer }}.zip
           body_path: release-notes.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
