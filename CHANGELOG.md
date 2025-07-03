@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2025-07-03
+
+### ⚙️  Miscellaneous Tasks
+
+- Skip non-compliant versions
+
 ## [0.8.0] - 2025-07-03
 
 ### 🐛 Bug Fixes
