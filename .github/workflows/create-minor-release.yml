@@ -33,6 +33,9 @@ jobs:
           useConfigFile: true
           configFilePath: .github/GitVersion.yml
 
+      - name: Generate changelog
+        run: echo "git cliff --config .github/cliff.toml --tag $GitVersion_FullSemVer --output CHANGELOG.md"
+
       - name: Update version in readme
         run: |
           sed -i "s/Version:.*/Version: $GitVersion_FullSemVer/" README.md
