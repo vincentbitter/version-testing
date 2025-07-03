@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2025-07-03
+
+### 🐛 Bug Fixes
+
+- Get correct file for release
+
+### ⚙️  Miscellaneous Tasks
+
+- Hide header in release notes
+
 ## [0.5.0] - 2025-07-03
 
 ### 🐛 Bug Fixes
