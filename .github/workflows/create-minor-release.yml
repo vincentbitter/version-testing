@@ -59,7 +59,7 @@ jobs:
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v$GitVersion_FullSemVer"
+          tag_name: v${{ env.GitVersion_FullSemVer }}
           files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
           body_path: release-notes.md
         env:
