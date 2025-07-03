@@ -61,3 +61,5 @@ jobs:
             ${{github.workspace}}/${{ github.event.repository.name }}-v${{ env.GitVersion_FullSemVer }}.zip \
             --title "v${{ env.GitVersion_FullSemVer }}" \
             -F release-notes.md
+        env:
+          GH_TOKEN: ${{ github.token }}
