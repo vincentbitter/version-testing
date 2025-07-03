@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Get correct file for release
 
+### 🚜 Refactor
+
+- Use gh release instead of marketplace action
+
 ### ⚙️  Miscellaneous Tasks
 
 - Hide header in release notes
