@@ -49,9 +49,8 @@ jobs:
           git push --follow-tags origin main
 
       - name: Generate zip
-        uses: 10up/action-wordpress-plugin-build-zip@stable
-        env:
-          SLUG: akismet
+        run: |
+          git archive --format zip --output ${{github.event.repository.name}}-v$GitVersion_FullSemVer.zip HEAD
 
       - name: Run git-cliff
         run: git cliff --config .github/cliff.toml --current --output release-notes.md
