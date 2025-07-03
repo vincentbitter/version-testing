@@ -34,7 +34,7 @@ jobs:
           configFilePath: .github/GitVersion.yml
 
       - name: Generate changelog
-        run: echo "git cliff --config .github/cliff.toml --tag $GitVersion_FullSemVer --output CHANGELOG.md"
+        run: echo "git cliff --config .github/cliff.toml --tag $GitVersion_FullSemVer --output ${{github.workspace}}/CHANGELOG.md"
 
       - name: Update version in readme
         run: |
@@ -52,7 +52,7 @@ jobs:
           SLUG: akismet
 
       - name: Run git-cliff
-        run: echo "git cliff --config .github/cliff.toml --current --output release-notes.md"
+        run: echo "git cliff --config .github/cliff.toml --current --output ${{github.workspace}}/release-notes.md"
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
