@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2025-07-03
+
+### 🐛 Bug Fixes
+
+- Release name
+
+### ⚙️  Miscellaneous Tasks
+
+- Use git archive command
+
 ## [0.4.0] - 2025-07-03
 
 ### 🚀 Features
