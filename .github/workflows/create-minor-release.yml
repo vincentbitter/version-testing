@@ -31,7 +31,7 @@ jobs:
         uses: gittools/actions/gitversion/execute@v3.2.1
         with:
           useConfigFile: true
-          configFilePath: GitVersion.yml
+          configFilePath: ./github/workflows/GitVersion.yml
 
       - name: Update version in readme
         run: |
@@ -49,10 +49,10 @@ jobs:
           SLUG: akismet
 
       - name: Run git-cliff
-        run: echo "git cliff --current --output release-notes.md"
+        run: echo "git cliff --config ./github/workflows/cliff.toml --current --output release-notes.md"
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
           body_path: release-notes.md
