@@ -19,6 +19,9 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git config --global user.name "Github Actions"
 
+      - name: Set up git-cliff
+        uses: kenji-miyake/setup-git-cliff@v2
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -39,3 +42,19 @@ jobs:
         run: |
           git tag -a "v$GitVersion_FullSemVer" -m "Release version $GitVersion_FullSemVer"
           git push --follow-tags origin main
+
+      - name: Run git-cliff
+        run: echo "RELEASE_NOTES=$(git cliff --current)" >> $GITHUB_ENV
+
+      - name: Generate zip
+        uses: 10up/action-wordpress-plugin-build-zip@stable
+        #env:
+        #  SLUG: my-super-cool-plugin # optional, remove if GitHub repo name matches SVN slug, including capitalization
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
+          body: $RELEASE_NOTES
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
