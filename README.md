@@ -1,6 +1,6 @@
 # Version test
 
-Version: 0.3.0
+Version: 0.4.0
 
 # Changelog
 
