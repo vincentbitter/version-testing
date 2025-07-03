@@ -45,8 +45,8 @@ jobs:
 
       - name: Generate zip
         uses: 10up/action-wordpress-plugin-build-zip@stable
-        #env:
-        #  SLUG: my-super-cool-plugin # optional, remove if GitHub repo name matches SVN slug, including capitalization
+        env:
+          SLUG: akismet
 
       - name: Run git-cliff
         run: echo "git cliff --current --output release-notes.md"
