@@ -56,10 +56,8 @@ jobs:
         run: git cliff --config .github/cliff.toml --current --output release-notes.md --strip header
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ env.GitVersion_FullSemVer }}
-          files: ${{github.workspace}}/${{ github.event.repository.name }}-v${{ env.GitVersion_FullSemVer }}.zip
-          body_path: release-notes.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v${{ env.GitVersion_FullSemVer }} \
+            ${{github.workspace}}/${{ github.event.repository.name }}-v${{ env.GitVersion_FullSemVer }}.zip \
+            --title "v${{ env.GitVersion_FullSemVer }}" \
+            -F release-notes.md
