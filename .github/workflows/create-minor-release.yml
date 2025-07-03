@@ -53,7 +53,7 @@ jobs:
           git archive --format zip --output ${{github.event.repository.name}}-v$GitVersion_FullSemVer.zip HEAD
 
       - name: Run git-cliff
-        run: git cliff --config .github/cliff.toml --current --output release-notes.md
+        run: git cliff --config .github/cliff.toml --current --output release-notes.md --strip header
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
