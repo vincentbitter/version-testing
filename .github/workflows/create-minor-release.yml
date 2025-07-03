@@ -43,18 +43,18 @@ jobs:
           git tag -a "v$GitVersion_FullSemVer" -m "Release version $GitVersion_FullSemVer"
           git push --follow-tags origin main
 
-      - name: Run git-cliff
-        run: echo "RELEASE_NOTES=$(git cliff --current)" >> $GITHUB_ENV
-
       - name: Generate zip
         uses: 10up/action-wordpress-plugin-build-zip@stable
         #env:
         #  SLUG: my-super-cool-plugin # optional, remove if GitHub repo name matches SVN slug, including capitalization
 
+      - name: Run git-cliff
+        run: echo "git cliff --current --output release-notes.md"
+
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
-          body: $RELEASE_NOTES
+          body_path: release-notes.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
