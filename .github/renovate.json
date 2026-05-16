@@ -20,11 +20,14 @@
             ]
         },
         {
-          "description": "Automerge non-major updates",
-          "matchUpdateTypes": ["minor", "patch"],
-          "automerge": true,
-    "automergeType": "squash",
-    "commitMessageTopic": "{{{depName}}}",
+            "description": "Automerge non-major updates",
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "automerge": true,
+            "automergeType": "squash",
+            "commitMessageTopic": "{{{depName}}}"
         }
     ],
     "prHourlyLimit": 0,
