@@ -23,7 +23,7 @@ jobs:
         uses: kenji-miyake/setup-git-cliff@v2
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
