@@ -3,33 +3,14 @@
     "extends": [
         "config:recommended",
         ":semanticCommits",
-        ":semanticCommitTypeAll(chore)"
+        ":semanticCommitTypeAll(chore)",
+        ":automergeAll"
     ],
     "rangeStrategy": "bump",
     "labels": [
         "dependencies"
     ],
-    "packageRules": [
-        {
-            "matchUpdateTypes": [
-                "major"
-            ],
-            "automerge": false,
-            "labels": [
-                "major-update"
-            ]
-        },
-        {
-            "description": "Automerge non-major updates",
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
-            ],
-            "automerge": true,
-            "automergeType": "squash",
-            "commitMessageTopic": "{{{depName}}}"
-        }
-    ],
+    "automergeType": "squash",
     "prHourlyLimit": 0,
     "prConcurrentLimit": 0,
     "dependencyDashboard": true
