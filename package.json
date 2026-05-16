@@ -1,0 +1,9 @@
+{
+    "name": "version-testing",
+    "version": "1.0.0",
+    "description": "Test",
+    "type": "module",
+    "devDependencies": {
+        "@playwright/test": "1.59.1",
+    }
+}
