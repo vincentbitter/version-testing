@@ -12,7 +12,6 @@
     "automerge": true,
     "automergeType": "squash",
     "commitMessageTopic": "{{{depName}}}",
-    "commitMessageExtra": "updates: {{{updates}}}",
     "packageRules": [
         {
             "matchUpdateTypes": [
