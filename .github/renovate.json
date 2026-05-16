@@ -9,9 +9,6 @@
     "labels": [
         "dependencies"
     ],
-    "automerge": true,
-    "automergeType": "squash",
-    "commitMessageTopic": "{{{depName}}}",
     "packageRules": [
         {
             "matchUpdateTypes": [
@@ -21,6 +18,13 @@
             "labels": [
                 "major-update"
             ]
+        },
+        {
+          "description": "Automerge non-major updates",
+          "matchUpdateTypes": ["minor", "patch"],
+          "automerge": true,
+    "automergeType": "squash",
+    "commitMessageTopic": "{{{depName}}}",
         }
     ],
     "prHourlyLimit": 0,
