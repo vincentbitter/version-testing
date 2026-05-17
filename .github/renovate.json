@@ -6,7 +6,6 @@
         ":semanticCommitTypeAll(chore)",
         ":automergeAll"
     ],
-    "gitAuthor": "Vincent Bitter <5149862+vincentbitter@users.noreply.github.com>",
     "rangeStrategy": "bump",
     "labels": [
         "dependencies"
