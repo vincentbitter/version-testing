@@ -10,6 +10,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Cache Renovate + npm
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/renovate
+            ~/.npm
+          key: renovate-${{ runner.os }}-${{ hashFiles('**/renovate.json') }}
+          restore-keys: |
+            renovate-${{ runner.os }}-
       - name: Renovate
         uses: renovatebot/github-action@v46.1.14
         env:
